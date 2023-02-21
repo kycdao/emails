@@ -1,6 +1,10 @@
-# React Email Starter
+# 📨 Emails
 
-A live preview right in your browser so you don't need to keep sending real emails during development.
+This is a collection of our email templates used at kycDAO, built with React.
+
+## Did you know?
+
+This project is using [Volta ⚡](https://github.com/volta-cli/volta), a hassle-free way to manage your JavaScript command-line tools.
 
 ## Getting Started
 
