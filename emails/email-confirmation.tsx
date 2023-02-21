@@ -1,6 +1,4 @@
 import React, {CSSProperties} from 'react';
-import {Html} from "@react-email/html";
-import {Head} from "@react-email/head";
 import {Preview} from "@react-email/preview";
 import {Body} from "@react-email/body";
 import {Container} from '@react-email/container';
@@ -9,24 +7,15 @@ import {Img} from "@react-email/img";
 import {Heading} from '@react-email/heading';
 import {Text} from '@react-email/text';
 import {Button} from "@react-email/button";
+import DefaultLayout from "./components/DefaultLayout";
 
-interface Props {
-    confirm_url: string;
-    generated_on: string;
-}
-
-const EmailConfirmation: React.FC<Props> = ({confirm_url, generated_on}) => {
+const EmailConfirmation: React.FC = () => {
     return (
-        <Html>
-            <Head>
-                <link rel="preconnect" href="https://fonts.googleapis.com"/>
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
-                <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
-            </Head>
+        <DefaultLayout>
             <Preview>
                 Please confirm your email address to proceed with your kycDAO verification
             </Preview>
-            <Body style={main}>
+            <Body>
                 <Container style={container}>
                     <Section style={header}>
                         <Img
@@ -45,20 +34,14 @@ const EmailConfirmation: React.FC<Props> = ({confirm_url, generated_on}) => {
                             The magic link will expire in 2 hours.
                         </Text>
 
-                        <Button style={button} href={confirm_url}>Confirm my email</Button>
+                        <Button style={button} href='https://kycdao.xyz'>Confirm my email</Button>
 
                         <Text style={note}>This link was generated in 17.02.2023 - CET 12:02</Text>
                     </Section>
                 </Container>
             </Body>
-        </Html>
+        </DefaultLayout>
     )
-}
-
-const main: CSSProperties = {
-    backgroundColor: '#F3F3F7',
-    margin: '0 auto',
-    fontFamily: 'Roboto',
 }
 
 const container: CSSProperties = {

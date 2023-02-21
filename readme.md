@@ -11,16 +11,12 @@ This project is using [Volta ⚡](https://github.com/volta-cli/volta), a hassle-
 First, install the dependencies:
 
 ```sh
-npm install
-# or
 yarn
 ```
 
 Then, run the development server:
 
 ```sh
-npm run dev
-# or
 yarn dev
 ```
 
