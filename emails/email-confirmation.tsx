@@ -1,5 +1,4 @@
 import React, {CSSProperties} from 'react';
-import {Preview} from "@react-email/preview";
 import {Body} from "@react-email/body";
 import {Container} from '@react-email/container';
 import {Section} from '@react-email/section';
@@ -7,19 +6,18 @@ import {Img} from "@react-email/img";
 import {Heading} from '@react-email/heading';
 import {Text} from '@react-email/text';
 import {Button} from "@react-email/button";
-import DefaultLayout from "./components/DefaultLayout";
+import DefaultLayout, {assetBaseUrl} from "./components/DefaultLayout";
 
 const EmailConfirmation: React.FC = () => {
     return (
-        <DefaultLayout>
-            <Preview>
-                Please confirm your email address to proceed with your kycDAO verification
-            </Preview>
+        <DefaultLayout
+            preview='Please confirm your email address to proceed with your kycDAO verification'
+        >
             <Body>
                 <Container style={container}>
                     <Section style={header}>
                         <Img
-                            src={`/static/kycdao-logo.png`}
+                            src={`${assetBaseUrl}/kycdao-logo.png`}
                             width="182"
                             height="46"
                             alt="kycDAO"
@@ -30,7 +28,7 @@ const EmailConfirmation: React.FC = () => {
                     </Section>
                     <Section style={body}>
                         <Text style={text}>
-                            Click the button below to confirm you e-mail address. <br />
+                            Click the button below to confirm you e-mail address. <br/>
                             The magic link will expire in 2 hours.
                         </Text>
 
@@ -53,7 +51,7 @@ const container: CSSProperties = {
 }
 
 const header: CSSProperties = {
-    backgroundImage: 'url("/static/kycd-pearl-background_small.png")',
+    background: `url("${assetBaseUrl}/kycd-pearl-background_small.png") center / cover no-repeat #000000`,
     height: '330px',
     padding: '80px 60px',
 }
